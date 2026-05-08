@@ -8,16 +8,16 @@
 </head>
 <body>
   <div class="page">
-    <header>
+    <header class="site-header">
       <h1>Contact Us</h1>
       <p class="subtitle">A simple contact page for students to demonstrate navigation and structure.</p>
     </header>
 
-    <nav>
+    <nav class="site-nav">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="booking.html">Booking</a>
-      <a href="contact.html">Contact Us</a>
+      <a class="active" href="contact.html">Contact Us</a>
     </nav>
 
     <main>
@@ -35,7 +35,27 @@
           trust in the website.
         </p>
       </section>
+
+      <section>
+        <h2>Send A Message</h2>
+        <form class="basic-form">
+          <label for="visitor-name">Name</label>
+          <input id="visitor-name" name="visitor-name" type="text" placeholder="Enter your name" />
+
+          <label for="visitor-email">Email</label>
+          <input id="visitor-email" name="visitor-email" type="email" placeholder="Enter your email" />
+
+          <label for="visitor-message">Message</label>
+          <textarea id="visitor-message" name="visitor-message" rows="5" placeholder="Write your message"></textarea>
+
+          <button type="submit">Submit</button>
+        </form>
+      </section>
     </main>
+
+    <footer class="site-footer">
+      <p>Contact page for the Pearl Trails Uganda website.</p>
+    </footer>
   </div>
 </body>
 </html>

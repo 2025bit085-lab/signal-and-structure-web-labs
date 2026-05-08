@@ -8,15 +8,15 @@
 </head>
 <body>
   <div class="page">
-    <header>
+    <header class="site-header">
       <h1>Booking Page</h1>
       <p class="subtitle">A simple sample page showing how booking support could work.</p>
     </header>
 
-    <nav>
+    <nav class="site-nav">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="booking.html">Booking</a>
+      <a class="active" href="booking.html">Booking</a>
       <a href="contact.html">Contact Us</a>
     </nav>
 
@@ -37,7 +37,34 @@
           information in one place. This page represents a simple solution to that problem.
         </p>
       </section>
+
+      <section>
+        <h2>Simple Booking Form</h2>
+        <form class="basic-form">
+          <label for="full-name">Full Name</label>
+          <input id="full-name" name="full-name" type="text" placeholder="Enter your name" />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="Enter your email" />
+
+          <label for="service">Preferred Service</label>
+          <select id="service" name="service">
+            <option>Hotel Booking</option>
+            <option>Tour Package</option>
+            <option>Transport Support</option>
+          </select>
+
+          <label for="message">Extra Details</label>
+          <textarea id="message" name="message" rows="4" placeholder="Type your request here"></textarea>
+
+          <button type="submit">Send Request</button>
+        </form>
+      </section>
     </main>
+
+    <footer class="site-footer">
+      <p>Booking support page for class demonstration.</p>
+    </footer>
   </div>
 </body>
 </html>

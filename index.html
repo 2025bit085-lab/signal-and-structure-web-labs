@@ -8,20 +8,20 @@
 </head>
 <body>
   <div class="page">
-    <header>
+    <header class="site-header">
       <h1>Pearl Trails Uganda</h1>
       <p class="subtitle">A simple student website project about promoting tourism in Uganda.</p>
     </header>
 
-    <nav>
-      <a href="index.html">Home</a>
+    <nav class="site-nav">
+      <a class="active" href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="booking.html">Booking</a>
       <a href="contact.html">Contact Us</a>
     </nav>
 
     <main>
-      <section>
+      <section class="intro-box">
         <h2>Background</h2>
         <p>
           Uganda has many tourist attractions, cultural places, and natural experiences.
@@ -45,7 +45,59 @@
           attractions, view services, send booking requests, and contact the tourism team.
         </p>
       </section>
+
+      <section>
+        <h2>Main Areas Covered</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Tourist Places</h3>
+            <p>Basic information about parks, lakes, mountains, and cultural sites.</p>
+          </article>
+          <article class="card">
+            <h3>Travel Support</h3>
+            <p>Simple guidance for booking, transport, and planning a trip.</p>
+          </article>
+          <article class="card">
+            <h3>Contact Services</h3>
+            <p>A place where users can send questions and get help more easily.</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>Sample Attractions</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Attraction</th>
+              <th>Location</th>
+              <th>Main Activity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bwindi Forest</td>
+              <td>South Western Uganda</td>
+              <td>Gorilla tracking</td>
+            </tr>
+            <tr>
+              <td>Source of the Nile</td>
+              <td>Jinja</td>
+              <td>Boat rides and sightseeing</td>
+            </tr>
+            <tr>
+              <td>Queen Elizabeth Park</td>
+              <td>Western Uganda</td>
+              <td>Game drives</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
     </main>
+
+    <footer class="site-footer">
+      <p>Student web design coursework project.</p>
+    </footer>
   </div>
 </body>
 </html>
