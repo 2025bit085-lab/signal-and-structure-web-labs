@@ -1,117 +1,79 @@
 const WIDTH = 1280;
 const HEIGHT = 720;
-const COLORS = {
-  background: "#f7f4ee",
-  paper: "#fffdfa",
-  ink: "#111111",
-  muted: "#5f5a52",
-  accent: "#835c34",
-  line: "#d8d0c3",
-  soft: "#f4eee3",
-};
 
-function addShell(slide) {
-  slide.background.fill = COLORS.background;
-  slide.shapes.add({
-    geometry: "rect",
-    position: { left: 34, top: 30, width: WIDTH - 68, height: HEIGHT - 60 },
-    fill: COLORS.paper,
-    line: { width: 1.2, fill: COLORS.line },
-  });
-  slide.shapes.add({
-    geometry: "rect",
-    position: { left: 68, top: 92, width: 130, height: 6 },
-    fill: COLORS.accent,
-    line: { width: 0, fill: COLORS.accent },
-  });
-}
-
-function addTextBox(slide, text, position, options = {}) {
-  const box = slide.shapes.add({
+function box(slide, text, position, options = {}) {
+  const shape = slide.shapes.add({
     geometry: "rect",
     position,
-    fill: options.fill ?? COLORS.paper,
-    line: options.line ?? { width: 0, fill: COLORS.paper },
+    fill: options.fill ?? "#FFFFFF",
+    line: options.line ?? { width: 0, fill: "#FFFFFF" },
   });
-  box.text = text;
-  box.text.typeface = options.typeface ?? "Aptos";
-  box.text.fontSize = options.fontSize ?? 24;
-  box.text.bold = options.bold ?? false;
-  box.text.color = options.color ?? COLORS.ink;
-  box.text.alignment = options.alignment ?? "left";
-  box.text.verticalAlignment = options.verticalAlignment ?? "top";
-  box.text.insets = options.insets ?? { left: 4, right: 4, top: 2, bottom: 2 };
-  return box;
+  shape.text = text;
+  shape.text.typeface = options.typeface ?? "Arial";
+  shape.text.fontSize = options.fontSize ?? 22;
+  shape.text.bold = options.bold ?? false;
+  shape.text.color = options.color ?? "#000000";
+  shape.text.insets = options.insets ?? { left: 0, right: 0, top: 0, bottom: 0 };
+  return shape;
 }
 
 export async function slide02(presentation) {
   const slide = presentation.slides.add();
-  addShell(slide);
+  slide.background.fill = "#FFFFFF";
 
-  addTextBox(slide, "Project Aim", {
-    left: 68,
-    top: 116,
-    width: 520,
-    height: 48,
+  slide.shapes.add({
+    geometry: "rect",
+    position: { left: 40, top: 40, width: WIDTH - 80, height: HEIGHT - 80 },
+    fill: "#FFFFFF",
+    line: { width: 1, fill: "#CFCFCF" },
+  });
+
+  box(slide, "Project Aim", {
+    left: 90,
+    top: 90,
+    width: 250,
+    height: 40,
   }, {
-    typeface: "Georgia",
-    fontSize: 32,
+    typeface: "Times New Roman",
+    fontSize: 28,
     bold: true,
   });
 
-  slide.shapes.add({
-    geometry: "roundRect",
-    position: { left: 68, top: 188, width: 1140, height: 200 },
-    fill: COLORS.soft,
-    line: { width: 1, fill: COLORS.line },
-  });
-
-  addTextBox(slide, "To build a clear and accessible practice website that demonstrates steady growth in HTML page structure, navigation, multimedia use, semantic layout, tabular organization, and form design.", {
-    left: 96,
-    top: 228,
-    width: 1084,
-    height: 128,
+  box(slide, "To make a simple tourism website that helps users access information, see where current tourism services are lacking, and get easier support for planning and booking.", {
+    left: 90,
+    top: 160,
+    width: 1030,
+    height: 130,
   }, {
-    fontSize: 25,
-    color: COLORS.ink,
-    insets: { left: 0, right: 0, top: 0, bottom: 0 },
+    fontSize: 24,
   });
 
-  const bullets = [
-    "Apply the six lab outcomes in one coherent project.",
-    "Keep the interface readable, properly labeled, and easy to navigate.",
-    "Show meaningful content instead of placeholder text or empty structure.",
+  box(slide, "Where we are lacking:", {
+    left: 90,
+    top: 330,
+    width: 280,
+    height: 30,
+  }, {
+    typeface: "Times New Roman",
+    fontSize: 24,
+    bold: true,
+  });
+
+  const items = [
+    "Tourism information is not always found in one place.",
+    "Trusted booking details may be hard for visitors to identify.",
+    "Smaller tourism services may have low online visibility.",
   ];
 
-  bullets.forEach((bullet, index) => {
-    slide.shapes.add({
-      geometry: "roundRect",
-      position: { left: 68, top: 430 + index * 74, width: 1140, height: 54 },
-      fill: COLORS.paper,
-      line: { width: 1, fill: COLORS.line },
-    });
-
-    addTextBox(slide, `- ${bullet}`, {
-      left: 94,
-      top: 444 + index * 74,
-      width: 1074,
-      height: 26,
+  items.forEach((item, index) => {
+    box(slide, `- ${item}`, {
+      left: 110,
+      top: 390 + index * 60,
+      width: 980,
+      height: 32,
     }, {
-      fontSize: 20,
-      color: COLORS.ink,
-      insets: { left: 0, right: 0, top: 0, bottom: 0 },
+      fontSize: 21,
     });
-  });
-
-  addTextBox(slide, "The aim follows the same practical, instruction-led tone shown in the reference screenshots.", {
-    left: 68,
-    top: 653,
-    width: 760,
-    height: 24,
-  }, {
-    fontSize: 15,
-    color: COLORS.muted,
-    insets: { left: 0, right: 0, top: 0, bottom: 0 },
   });
 
   return slide;

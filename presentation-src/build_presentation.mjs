@@ -14,7 +14,7 @@ const slidesDir = path.join(__dirname, "slides");
 const outputDir = path.join(repoRoot, "presentation");
 const previewDir = path.join(workspace, "preview");
 const layoutDir = path.join(workspace, "layout");
-const output = path.join(outputDir, "signal-and-structure-project-showcase.pptx");
+const output = path.join(outputDir, "pearl-trails-uganda-basic-presentation.pptx");
 const manifest = path.join(outputDir, "artifact-build-manifest.json");
 
 const result = spawnSync(
