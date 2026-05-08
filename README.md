@@ -9,6 +9,7 @@ This repository contains:
 ## Live Site
 
 GitHub Pages will publish from the `main` branch root.
+Live URL: https://2025bit085-lab.github.io/signal-and-structure-web-labs/
 
 ## Presentation Structure
 
